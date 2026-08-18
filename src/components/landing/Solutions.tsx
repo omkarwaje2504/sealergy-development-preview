@@ -151,7 +151,7 @@ function MainCard({ item }: { item: (typeof mainContent)[0] }) {
       href={item.href}
       className="group flex flex-col border rounded-2xl shadow-sm hover:shadow-md h-full"
     >
-      <div className="relative h-56 w-full overflow-hidden rounded-lg">
+      <div className="relative h-40 lg:h-56 w-full overflow-hidden rounded-lg">
         <Skeleton show={!imgLoaded} />
         <motion.div
           initial={{ scale: 1.06, opacity: 0 }}
@@ -170,10 +170,12 @@ function MainCard({ item }: { item: (typeof mainContent)[0] }) {
         </motion.div>
       </div>
       <div className="mt-4 px-4">
-        <h3 className="text-2xl font-bold text-[#1A457A] transition-colors group-hover:text-[#2563a8]">
+        <h3 className=" leading-tight lg:leading-none text-lg lg:text-2xl font-bold text-[#1A457A] transition-colors group-hover:text-[#2563a8]">
           {item.title}
         </h3>
-        <p className="mt-2 text-gray-600">{item.description}</p>
+        <p className=" mb-4 lg:mb-0 mt-2 text-sm lg:text-base text-gray-600">
+          {item.description}
+        </p>
       </div>
     </Link>
   );
@@ -226,19 +228,19 @@ export default function Solutions() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="mb-16 grid grid-cols-1 gap-6 md:grid-cols-3"
+          className="mb-10 lg:mb-16 grid grid-cols-1 gap-4 lg:gap-6 md:grid-cols-3"
         >
           {topServices.map((service) => (
             <motion.div
               key={service.title}
               variants={fadeUp}
-              className="flex items-start gap-6"
+              className="flex items-start gap-2 lg:gap-6"
             >
               <div className="rounded-lg bg-[#1A457A]/10 p-4">
                 <service.icon className="h-8 w-8 text-[#1A457A]" />
               </div>
               <div>
-                <p className="mb-2 text-xl font-semibold text-[#1A457A]">
+                <p className="lg:mb-2 text-lg lg:text-xl font-bold lg:font-semibold text-[#1A457A] leading-tight lg:leading-none">
                   {service.title}
                 </p>
                 <p className="text-sm text-gray-600">{service.description}</p>

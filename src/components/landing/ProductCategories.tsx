@@ -254,7 +254,7 @@ export default function ProductCategories() {
           transition={{ duration: 0.45, ease: "easeOut" }}
           className="mb-6 flex flex-col items-center text-center"
         >
-          <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 md:text-4xl">
             Our Product Categories
           </h2>
           <div className="mt-4 h-[3px] w-12 rounded-full bg-[#1A457A]" />
